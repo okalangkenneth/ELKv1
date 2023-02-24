@@ -88,7 +88,7 @@ docker-compose up
 ````
 This command will download the Elasticsearch and Kibana images and start the containers in the background. You should see output similar to the following:
 
-````javasript
+````javascript
 Creating network "elastcinetwork" with the default driver
 Creating elasticsearch ... done
 Creating kibana         ... done
