@@ -94,7 +94,37 @@ Creating elasticsearch ... done
 Creating kibana         ... done
 ````
 
+Step 3: Verify Elasticsearch and Kibana are running
 
+Finally, we'll verify that Elasticsearch and Kibana are running. Open a web browser and navigate to http://localhost:9200/. You should see a JSON response that starts with something like:
+
+````json
+{
+  "name" : "2af12e338b11",
+  "cluster_name" : "docker-cluster",
+  "cluster_uuid" : "so1JpXtORfKG6db3xTx25Q",
+  "version" : {
+    "number" : "7.16.1",
+    "build_flavor" : "default",
+    "build_type" : "docker",
+    "build_hash" : "5b38441b16b1ebb16a27c107a4c3865776e20c53",
+    "build_date" : "2021-12-11T00:29:38.865893768Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.10.1",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+````
+
+This response confirms that Elasticsearch is running.
+
+To verify that Kibana is running, open a web browser and navigate to http://localhost:5601/. You should see the Kibana home page, which looks something like this:
+
+![image](https://user-images.githubusercontent.com/68539411/221278491-2b7e0d8c-d7d5-434d-9c12-179514aa91aa.png)
+
+You should also be able to see the containers running in docker as the shown below.
 
 ![image](https://user-images.githubusercontent.com/68539411/221275300-768b055b-6851-464d-9adb-5f1c026400f9.png)
 
