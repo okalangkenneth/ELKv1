@@ -36,7 +36,7 @@ Step 2: Run Elasticsearch and Kibana containers.
 
 Next, we'll run Elasticsearch and Kibana containers using Docker Compose. Docker Compose is a tool for defining and running multi-container Docker applications.
 
-Create a new directory named ELKv1 in your project directory and create a new file named docker-compose.yml inside it. Then, copy the following code into docker-compose.yml:
+Create a new directory named ELKv1 in your project directory and create a new file named docker-compose.yml inside it in visual studio code. Then, copy the following code into docker-compose.yml:
 
 
 ````C#
