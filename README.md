@@ -21,8 +21,10 @@ Throughout the demonstration, we'll include snapshots of the code and Docker con
 Before getting started, make sure you have the following installed on your machine:
 
 Docker
+
 .NET 6 SDK
-Visual studio code.
+
+Visual Studio code.
 
 ## Setting up Docker and running Elasticsearch and Kibana containers.
 
@@ -34,7 +36,7 @@ Next, we'll run Elasticsearch and Kibana containers using Docker Compose. Docker
 
 Create a new directory named ELKv1 in your project directory and create a new file named docker-compose.yml inside it. Then, copy the following code into docker-compose.yml:
 
-```version: '3.1'
+--version: '3.1'
 
 services:
   elasticsearch:
@@ -70,8 +72,8 @@ networks:
     driver: bridge
 
 volumes:
-  elasticsearch-data:
-  ```
+  elasticsearch-data:--
+  
 
 
 
