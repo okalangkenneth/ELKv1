@@ -36,7 +36,9 @@ Next, we'll run Elasticsearch and Kibana containers using Docker Compose. Docker
 
 Create a new directory named ELKv1 in your project directory and create a new file named docker-compose.yml inside it. Then, copy the following code into docker-compose.yml:
 
---version: '3.1'
+#pragma warning disable 414, 3021
+
+version: '3.1'
 
 services:
   elasticsearch:
