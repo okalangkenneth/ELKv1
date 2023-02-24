@@ -83,6 +83,9 @@ This code defines two services: elasticsearch and kibana. The elasticsearch serv
 
 To run the Elasticsearch and Kibana containers, open a terminal and navigate to the elk directory. Then, run the following command:
 
+````bash
+docker-compose up 
+````
 
 
 
