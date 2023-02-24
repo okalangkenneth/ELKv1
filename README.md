@@ -163,6 +163,25 @@ dotnet new webapi --no-https -n DotnetELK
 ````
 This command will create a new .NET 6 web API project with the name DotnetELK.
 
+Step 2: Add Serilog and the Serilog.Sinks.Elasticsearch package
+
+Next, we need to add the Serilog and Serilog.Sinks.Elasticsearch packages to the project. Run the following commands to do so:
+
+````bash
+dotnet add package Serilog
+dotnet add package Serilog.Sinks.Elasticsearch
+dotnet add Serilog.Enrichers.Environment 
+dotnet add Serilog.Exceptions
+dotnet add Serilog.Sinks.Debug
+````
+These commands will add the Serilog and Serilog.Sinks.Elasticsearch packages to the project.
+
+Step 3: Configure Serilog to log to Elasticsearch
+
+Next, we need to configure Serilog to log to Elasticsearch. Open the Program.cs file and add the following code at the beginning of the Main method:
+
+
+
 
 
   
