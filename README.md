@@ -134,6 +134,13 @@ Step 4: Stop and remove the containers.
 To stop and remove the Elasticsearch and Kibana containers, open a terminal and navigate to the ELKv1 directory. Then, run the following command:
 
 ````bash
+docker-compose down
+````
+
+This command will stop and remove the containers. You should see output similar to the following:
+
+
+````bash
 Stopping kibana         ... done
 Stopping elasticsearch ... done
 Removing kibana         ... done
@@ -142,6 +149,21 @@ Removing network elastcinetwork
 ````
 
 That's it for the first demonstration! You've now set up Docker and ran Elasticsearch and Kibana containers. In the next demonstration, we'll create a new .NET 6 web API project and configure it to log to Elasticsearch using Serilog.
+
+## Configuring a .NET 6 web API to log to Elasticsearch using Serilog.
+
+In this demonstration, we'll create a new .NET 6 web API project and configure it to log to Elasticsearch using Serilog. Serilog is a popular logging library for .NET that supports structured logging and can send logs to various sinks, including Elasticsearch.
+
+Step 1: Create a new .NET 6 web API project
+
+Open a terminal and navigate to the directory where you want to create the project. Then, run the following command to create a new .NET 6 web API project:
+
+````bash
+dotnet new webapi --no-https -n DotnetELK
+````
+This command will create a new .NET 6 web API project with the name DotnetELK.
+
+
 
   
 
