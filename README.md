@@ -10,9 +10,76 @@ For example, a company running an e-commerce website could use this logging stac
 In this demonstration, we'll cover the following steps:
 
 - Setting up Docker and running Elasticsearch and Kibana containers.
-- Creating an ASP.NET 6 web API project with Serilog logging.
+- Creating an ASP.NET 6 web API project with Serilog logging in visual studio code.
 - Configuring Serilog to send logs to Elasticsearch.
 - Running the web API project in a Docker container and generating logs.
 - Using Kibana to search, filter, and visualize the logs.
 
 Throughout the demonstration, we'll include snapshots of the code and Docker containers running, so you can see exactly how everything works together to create a robust logging solution.
+
+## Requirements
+Before getting started, make sure you have the following installed on your machine:
+
+Docker
+.NET 6 SDK
+Visual studio code.
+
+## Setting up Docker and running Elasticsearch and Kibana containers.
+
+Step 1: Install Docker.
+First, we need to install Docker. Docker provides a platform for developers and sysadmins to develop, ship, and run applications. You can download Docker from the official website here.
+
+Step 2: Run Elasticsearch and Kibana containers
+Next, we'll run Elasticsearch and Kibana containers using Docker Compose. Docker Compose is a tool for defining and running multi-container Docker applications.
+
+Create a new directory named ELKv1 in your project directory and create a new file named docker-compose.yml inside it. Then, copy the following code into docker-compose.yml:
+
+``version: '3.1'
+
+services:
+  elasticsearch:
+    container_name: els
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.1
+    ports:
+      - 9200:9200
+    volumes:
+
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    environment:
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    networks:
+      - elastcinetwork
+
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:7.16.1
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_URL=http://localhost:9200
+    networks:
+      - elastcinetwork
+
+networks:
+  elastcinetwork:
+    driver: bridge
+
+volumes:
+  elasticsearch-data:
+  ``
+
+
+
+
+
+
+
+
+
+
+
