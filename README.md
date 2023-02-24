@@ -14,4 +14,4 @@ In this demonstration, we'll cover the following steps:
 - Configuring Serilog to send logs to Elasticsearch
 - Running the web API project in a Docker container and generating logs
 - Using Kibana to search, filter, and visualize the logs
-- Throughout the demonstration, we'll include snapshots of the code and Docker containers running, so you can see exactly how everything works together to create a robust logging solution.
+Throughout the demonstration, we'll include snapshots of the code and Docker containers running, so you can see exactly how everything works together to create a robust logging solution.
