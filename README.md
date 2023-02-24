@@ -36,8 +36,8 @@ Next, we'll run Elasticsearch and Kibana containers using Docker Compose. Docker
 
 Create a new directory named ELKv1 in your project directory and create a new file named docker-compose.yml inside it. Then, copy the following code into docker-compose.yml:
 
-#pragma warning disable 414, 3021
 
+````C#
 version: '3.1'
 
 services:
@@ -74,7 +74,8 @@ networks:
     driver: bridge
 
 volumes:
-  elasticsearch-data:--
+  elasticsearch-data:
+  ````
   
 
 
