@@ -29,9 +29,11 @@ Visual Studio code.
 ## Setting up Docker and running Elasticsearch and Kibana containers.
 
 Step 1: Install Docker.
+
 First, we need to install Docker. Docker provides a platform for developers and sysadmins to develop, ship, and run applications. You can download Docker from the official website here.
 
-Step 2: Run Elasticsearch and Kibana containers
+Step 2: Run Elasticsearch and Kibana containers.
+
 Next, we'll run Elasticsearch and Kibana containers using Docker Compose. Docker Compose is a tool for defining and running multi-container Docker applications.
 
 Create a new directory named ELKv1 in your project directory and create a new file named docker-compose.yml inside it. Then, copy the following code into docker-compose.yml:
