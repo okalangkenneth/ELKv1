@@ -79,6 +79,10 @@ volumes:
   elasticsearch-data:
   ````
   
+This code defines two services: elasticsearch and kibana. The elasticsearch service runs the Elasticsearch container and exposes port 9200 for Elasticsearch's REST API. The kibana service runs the Kibana container and exposes port 5601 for Kibana's web interface. The two services are connected to a network named elastcinetwork.
+
+To run the Elasticsearch and Kibana containers, open a terminal and navigate to the elk directory. Then, run the following command:
+  
 
 
 
