@@ -86,6 +86,13 @@ To run the Elasticsearch and Kibana containers, open a terminal and navigate to 
 ````bash
 docker-compose up 
 ````
+This command will download the Elasticsearch and Kibana images and start the containers in the background. You should see output similar to the following:
+
+````bash
+Creating network "elastcinetwork" with the default driver
+Creating elasticsearch ... done
+Creating kibana         ... done
+````bash
 
 
 
