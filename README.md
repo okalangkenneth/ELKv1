@@ -92,7 +92,7 @@ This command will download the Elasticsearch and Kibana images and start the con
 Creating network "elastcinetwork" with the default driver
 Creating elasticsearch ... done
 Creating kibana         ... done
-````javascript
+````
 
 
 
