@@ -239,6 +239,17 @@ ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string e
  The code is defining a method called "ConfigureLogs()" which is used to configure Serilog, a logging library, to write log messages to various destinations such as Elasticsearch.
  
  ### Step 4: Test the API and view logs in Kibana
+ 
+ Now, we can test the API and view the logs in Kibana. Open a terminal and navigate to the DotnetELK directory. Then, run the following command to start the API:
+ 
+````bash
+dotnet run
+````
+This command will start the API. Now, open a web browser and navigate to http://localhost:5216/weatherforecast. You should see a JSON response with some weather forecast data.
+
+````json
+[{"date":"2023-02-28T01:53:10.9049782+01:00","temperatureC":42,"temperatureF":107,"summary":"Freezing"},{"date":"2023-03-01T01:53:10.9049902+01:00","temperatureC":28,"temperatureF":82,"summary":"Mild"},{"date":"2023-03-02T01:53:10.9049906+01:00","temperatureC":33,"temperatureF":91,"summary":"Cool"},{"date":"2023-03-03T01:53:10.9049908+01:00","temperatureC":22,"temperatureF":71,"summary":"Freezing"},{"date":"2023-03-04T01:53:10.904991+01:00","temperatureC":44,"temperatureF":111,"summary":"Bracing"}]
+````
 
 
 
