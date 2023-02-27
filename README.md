@@ -10,7 +10,7 @@ For example, a company running an e-commerce website could use this logging stac
 In this demonstration, we'll cover the following steps:
 
 - Setting up Docker and running Elasticsearch and Kibana containers.
-- Creating an ASP.NET 6 web API project with Serilog logging in visual studio code.
+- Configuring a .NET 6 web API in visual studio code to log to Elasticsearch using Serilog.
 - Configuring Serilog to send logs to Elasticsearch.
 - Running the web API project in a Docker container and generating logs.
 - Using Kibana to search, filter, and visualize the logs.
@@ -150,7 +150,7 @@ Removing network elastcinetwork
 
 That's it for the first demonstration! You've now set up Docker and ran Elasticsearch and Kibana containers. In the next demonstration, we'll create a new .NET 6 web API project and configure it to log to Elasticsearch using Serilog.
 
-## Configuring a .NET 6 web API to log to Elasticsearch using Serilog.
+## Configuring a .NET 6 web API in visual studio code to log to Elasticsearch using Serilog..
 
 In this demonstration, we'll create a new .NET 6 web API project and configure it to log to Elasticsearch using Serilog. Serilog is a popular logging library for .NET that supports structured logging and can send logs to various sinks, including Elasticsearch.
 
