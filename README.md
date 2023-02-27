@@ -196,18 +196,49 @@ These commands will add the Serilog and Serilog.Sinks.Elasticsearch packages to 
 
 ### Step 3: Configure Serilog to log to Elasticsearch
 
-Next, we need to configure Serilog to log to Elasticsearch. Open the Program.cs file and add the following code at the beginning of the Main method:
+Next, we need to configure Serilog to log to Elasticsearch. Open the Program.cs file we firts define the function:
 
 ````C#
-Log.Logger = new LoggerConfiguration()
+ConfigureLogs();
+````
+
+We will create a helper region so we can easily identify the configuration code.
+
+````C#
+#region helper
+void ConfigureLogs()
+
+{
+    // Get the environment in which the application is running on
+    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+    // Get the configuration
+    var configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+    //Build the logs or create logger
+    Log.Logger = new LoggerConfiguration()
        .Enrich.FromLogContext()
        .Enrich.WithExceptionDetails() // Adds exceptions details
        .WriteTo.Debug()
        .WriteTo.Console()
        .WriteTo.Elasticsearch(ConfigureELS(configuration, env))
        .CreateLogger();
+
+}
+ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string env)
+{
+    return new ElasticsearchSinkOptions(new Uri(configuration["ELKConfiguration:Uri"]))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = $"{Assembly.GetExecutingAssembly().GetName().Name.ToLower()}-{env.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyy-MM}"
+    };
+}
+#endregion 
  ````
  This code configures Serilog to use the Elasticsearch sink and sends logs to Elasticsearch running on http://localhost:9200.
+ 
+ ### Step 4: Test the API and view logs in Kibana
 
 
 
