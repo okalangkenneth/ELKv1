@@ -276,9 +276,29 @@ Now, we can view the dashboard by going to the "Dashboard" section in the left-h
 
 This dashboard shows various visualizations of the logs that we've been sending to Elasticsearch. For example, the "HTTP requests over time" visualization shows the number of HTTP requests that have been made to the API over time and the 200 response.
 
+## Demonstration 5: Summary and cleanup
+In this final demonstration, we'll summarize what we've learned and clean up the resources that we've created.
 
+### Step 1: Summary
+We've gone through the following steps:
 
+Set up a .NET 6 web API project
+Added Serilog to the project to log HTTP requests and responses
+Configured Serilog to send logs to Elasticsearch
+Set up Kibana dashboards to visualize the logs
+By following these steps, we've created a logging pipeline that enables us to collect and visualize logs from our .NET 6 web API.
 
+### Step 2: Clean up
+To clean up the resources that we've created, we'll stop the Elasticsearch and Kibana Docker containers and delete the log files that we've created.
+
+To stop the Docker containers, open a terminal and navigate to the directory where the docker-compose.yml file is located. Then, run the following command:
+
+````bash
+docker-compose down
+````
+
+### Step 3: Conclusion
+Congratulations! You've successfully set up a logging pipeline using Elasticsearch, Kibana, and Serilog in a .NET 6 web API project. By doing so, you've created a powerful tool for collecting and visualizing logs, which can be very helpful in troubleshooting issues and gaining insights into the behavior of your application.
 
 
 
