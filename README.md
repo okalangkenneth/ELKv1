@@ -245,6 +245,7 @@ ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string e
  ````C# 
   _logger.LogInformation("WeatherForecastController Get - This message tests the logs by Kenneth Okalang", DateTime.UtcNow);
   ````
+  This code logs an informational message when the Get method is called.
  
  ### Step 5: Test the API and view logs in Kibana
  
