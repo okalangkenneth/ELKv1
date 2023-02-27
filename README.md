@@ -194,9 +194,13 @@ These commands will add the Serilog and Serilog.Sinks.Elasticsearch packages to 
 }
 ````
 
-### Step 3: Configure Serilog to log to Elasticsearch
+## Configure Serilog to log to Elasticsearch
 
-Next, we need to configure Serilog to log to Elasticsearch. Open the Program.cs file we firts define the function:
+Next, we need to configure Serilog to log to Elasticsearch. 
+
+### Step 1: Modifying Program.cs file.
+
+Open the Program.cs file we firts define the function:
 
 ````C#
 ConfigureLogs();
@@ -237,8 +241,10 @@ ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string e
 #endregion 
  ````
  The code is defining a method called "ConfigureLogs()" which is used to configure Serilog, a logging library, to write log messages to various destinations such as Elasticsearch.
+  
+ ### Running the web API project in a Docker container and generating logs.
  
- ### Step 4: Add logging to the API
+ ### Step 1: Add logging to the API
  
  Next, we'll add logging to the API. Open the Controllers/WeatherForecastController.cs file and add the following code to the Get method:
  
@@ -247,7 +253,9 @@ ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string e
   ````
   This code logs an informational message when the Get method is called.
  
- ### Step 5: Test the API and view logs in Kibana
+ ## Running the web API project in a Docker container and generating logs.
+ 
+ ### Step 2: Test the API and view logs in Kibana
  
  Now, we can test the API and view the logs in Kibana. Open a terminal and navigate to the DotnetELK directory. Then, run the following command to start the API:
  
@@ -269,7 +277,9 @@ As we refresh the browser with records from our application, the more the record
 ![image](https://user-images.githubusercontent.com/68539411/221548551-c3d5d326-fbb0-43b3-a63b-a0f8b3d0ae95.png)
 
 
-### Step 6: View the dashboard
+## Using Kibana to search, filter, and visualize the logs
+
+
 Now, we can view the dashboard by going to the "Dashboard" section in the left-hand navigation menu and clicking on the "dotnetelk Dashboard" dashboard. This should bring up a dashboard that looks like the following:
 
 ![image](https://user-images.githubusercontent.com/68539411/221553842-637d3dc5-6fde-4609-822a-c3f1b71bb768.png)
@@ -277,6 +287,7 @@ Now, we can view the dashboard by going to the "Dashboard" section in the left-h
 This dashboard shows various visualizations of the logs that we've been sending to Elasticsearch. For example, the "HTTP requests over time" visualization shows the number of HTTP requests that have been made to the API over time and the 200 response.
 
 ## Demonstration : Summary and cleanup
+
 In this final demonstration, we'll summarize what we've learned and clean up the resources that we've created.
 
 ### Step 1: Summary
