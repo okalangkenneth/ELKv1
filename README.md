@@ -276,16 +276,16 @@ Now, we can view the dashboard by going to the "Dashboard" section in the left-h
 
 This dashboard shows various visualizations of the logs that we've been sending to Elasticsearch. For example, the "HTTP requests over time" visualization shows the number of HTTP requests that have been made to the API over time and the 200 response.
 
-## Demonstration 5: Summary and cleanup
+## Demonstration : Summary and cleanup
 In this final demonstration, we'll summarize what we've learned and clean up the resources that we've created.
 
 ### Step 1: Summary
 We've gone through the following steps:
 
-Set up a .NET 6 web API project
-Added Serilog to the project to log HTTP requests and responses
-Configured Serilog to send logs to Elasticsearch
-Set up Kibana dashboards to visualize the logs
+1. Set up a .NET 6 web API project
+2. Added Serilog to the project to log HTTP requests and responses
+3. Configured Serilog to send logs to Elasticsearch
+4. Set up Kibana dashboards to visualize the logs
 By following these steps, we've created a logging pipeline that enables us to collect and visualize logs from our .NET 6 web API.
 
 ### Step 2: Clean up
