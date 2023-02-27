@@ -264,7 +264,7 @@ Finally, open Kibana by navigating to http://localhost:5601/ in a web browser. T
 
 ![image](https://user-images.githubusercontent.com/68539411/221548019-811de131-8c21-4d77-89e2-525eea9beb9a.png)
 
-As we refresh the browser with records fro our application, the more the records we will get. Expanding one of the logs will give more details. For example in the snapshot below we can see the message that I wrote in the controller.
+As we refresh the browser with records from our application, the more the records we will get. Expanding one of the logs will give more details. For example in the snapshot below we can see the message that I wrote in the controller.
 
 ![image](https://user-images.githubusercontent.com/68539411/221548551-c3d5d326-fbb0-43b3-a63b-a0f8b3d0ae95.png)
 
