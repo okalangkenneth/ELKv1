@@ -209,20 +209,20 @@ We will create a helper region so we can easily identify the configuration code.
 void ConfigureLogs()
 
 {
-    // Get the environment in which the application is running on
+   // Get the environment variable for the current environment (e.g. Development, Production)
     var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-    // Get the configuration
+   // Build the Configuration object, which is used to read settings from the appsettings.json file
     var configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .Build();
-    //Build the logs or create logger
+    // Configure Serilog by setting various options and sinks (destinations)
     Log.Logger = new LoggerConfiguration()
        .Enrich.FromLogContext()
        .Enrich.WithExceptionDetails() // Adds exceptions details
        .WriteTo.Debug()
        .WriteTo.Console()
-       .WriteTo.Elasticsearch(ConfigureELS(configuration, env))
+       .WriteTo.Elasticsearch(ConfigureELS(configuration, env)) // This line adds the Elasticsearch sink
        .CreateLogger();
 
 }
