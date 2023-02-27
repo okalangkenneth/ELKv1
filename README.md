@@ -269,6 +269,15 @@ As we refresh the browser with records from our application, the more the record
 ![image](https://user-images.githubusercontent.com/68539411/221548551-c3d5d326-fbb0-43b3-a63b-a0f8b3d0ae95.png)
 
 
+### Step 6: View the dashboard
+Now, we can view the dashboard by going to the "Dashboard" section in the left-hand navigation menu and clicking on the "dotnetelk Dashboard" dashboard. This should bring up a dashboard that looks like the following:
+
+![image](https://user-images.githubusercontent.com/68539411/221553842-637d3dc5-6fde-4609-822a-c3f1b71bb768.png)
+
+This dashboard shows various visualizations of the logs that we've been sending to Elasticsearch. For example, the "HTTP requests over time" visualization shows the number of HTTP requests that have been made to the API over time and the 200 response.
+
+
+
 
 
 
