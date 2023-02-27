@@ -28,11 +28,11 @@ Visual Studio code.
 
 ## Setting up Docker and running Elasticsearch and Kibana containers.
 
-Step 1: Install Docker.
+### Step 1: Install Docker.
 
 First, we need to install Docker. Docker provides a platform for developers and sysadmins to develop, ship, and run applications. You can download Docker from the official website here.
 
-Step 2: Run Elasticsearch and Kibana containers.
+### Step 2: Run Elasticsearch and Kibana containers.
 
 Next, we'll run Elasticsearch and Kibana containers using Docker Compose. Docker Compose is a tool for defining and running multi-container Docker applications.
 
@@ -94,7 +94,7 @@ Creating elasticsearch ... done
 Creating kibana         ... done
 ````
 
-Step 3: Verify Elasticsearch and Kibana are running
+### Step 3: Verify Elasticsearch and Kibana are running
 
 Finally, we'll verify that Elasticsearch and Kibana are running. Open a web browser and navigate to http://localhost:9200/. You should see a JSON response that starts with something like:
 
@@ -129,7 +129,7 @@ You should also be able to see the containers running in docker as the shown bel
 ![image](https://user-images.githubusercontent.com/68539411/221275300-768b055b-6851-464d-9adb-5f1c026400f9.png)
 
 
-Step 4: Stop and remove the containers.
+### Step 4: Stop and remove the containers.
 
 To stop and remove the Elasticsearch and Kibana containers, open a terminal and navigate to the ELKv1 directory. Then, run the following command:
 
@@ -154,7 +154,7 @@ That's it for the first demonstration! You've now set up Docker and ran Elastics
 
 In this demonstration, we'll create a new .NET 6 web API project and configure it to log to Elasticsearch using Serilog. Serilog is a popular logging library for .NET that supports structured logging and can send logs to various sinks, including Elasticsearch.
 
-Step 1: Create a new .NET 6 web API project
+### Step 1: Create a new .NET 6 web API project
 
 Open a terminal and navigate to the directory where you want to create the project. Then, run the following command to create a new .NET 6 web API project:
 
@@ -163,7 +163,7 @@ dotnet new webapi --no-https -n DotnetELK
 ````
 This command will create a new .NET 6 web API project with the name DotnetELK.
 
-Step 2: Add Serilog and the Serilog.Sinks.Elasticsearch package
+### Step 2: Add Serilog and the Serilog.Sinks.Elasticsearch package
 
 Next, we need to add the Serilog and Serilog.Sinks.Elasticsearch packages to the project. Run the following commands to do so:
 
@@ -174,11 +174,40 @@ dotnet add Serilog.Enrichers.Environment
 dotnet add Serilog.Exceptions
 dotnet add Serilog.Sinks.Debug
 ````
-These commands will add the Serilog and Serilog.Sinks.Elasticsearch packages to the project.
+These commands will add the Serilog and Serilog.Sinks.Elasticsearch packages to the project. We will have to update the appsettings.json file with serilog and with the target output ElasticSearch, Uri http://localhost:9200" like below.
 
-Step 3: Configure Serilog to log to Elasticsearch
+````C#
+{
+  "Serilog": {
+    "Minimumlevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Information",
+        "System": "Warning"
+      }
+    }
+  },
+  "ELKConfiguration": {
+    "Uri": "http://localhost:9200"
+  },
+  "AllowedHosts": "*"
+}
+````
+
+### Step 3: Configure Serilog to log to Elasticsearch
 
 Next, we need to configure Serilog to log to Elasticsearch. Open the Program.cs file and add the following code at the beginning of the Main method:
+
+````C#
+Log.Logger = new LoggerConfiguration()
+       .Enrich.FromLogContext()
+       .Enrich.WithExceptionDetails() // Adds exceptions details
+       .WriteTo.Debug()
+       .WriteTo.Console()
+       .WriteTo.Elasticsearch(ConfigureELS(configuration, env))
+       .CreateLogger();
+ ````
+ This code configures Serilog to use the Elasticsearch sink and sends logs to Elasticsearch running on http://localhost:9200.
 
 
 
