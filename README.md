@@ -260,7 +260,15 @@ This command will start the API. Now, open a web browser and navigate to http://
 [{"date":"2023-02-28T01:53:10.9049782+01:00","temperatureC":42,"temperatureF":107,"summary":"Freezing"},{"date":"2023-03-01T01:53:10.9049902+01:00","temperatureC":28,"temperatureF":82,"summary":"Mild"},{"date":"2023-03-02T01:53:10.9049906+01:00","temperatureC":33,"temperatureF":91,"summary":"Cool"},{"date":"2023-03-03T01:53:10.9049908+01:00","temperatureC":22,"temperatureF":71,"summary":"Freezing"},{"date":"2023-03-04T01:53:10.904991+01:00","temperatureC":44,"temperatureF":111,"summary":"Bracing"}]
 ````
 
-Finally, open Kibana by navigating to http://localhost:5601/ in a web browser. Then, go to the "Discover" page and you should see logs similar to the following:
+Finally, open Kibana by navigating to http://localhost:5601/ in a web browser. Then, go to the "Discover" page and create index pattern and you should see logs similar to the following:
+
+![image](https://user-images.githubusercontent.com/68539411/221548019-811de131-8c21-4d77-89e2-525eea9beb9a.png)
+
+As we refresh the browser with records fro our application, the more the records we will get. Expanding one of the logs will give more details. For example in the snapshot below we can see the message that I wrote in the controller.
+
+![image](https://user-images.githubusercontent.com/68539411/221548551-c3d5d326-fbb0-43b3-a63b-a0f8b3d0ae95.png)
+
+
 
 
 
