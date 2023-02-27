@@ -20,8 +20,10 @@ public class WeatherForecastController : ControllerBase
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
+
     {
-        _logger.LogInformation("WeatherForecastController Get - this is a nice message to test the logs", DateTime.UtcNow);
+        _logger.LogInformation("WeatherForecastController Get - This message tests the logs by Kenneth Okalang", DateTime.UtcNow);
+
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
             Date = DateTime.Now.AddDays(index),
@@ -31,3 +33,6 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
 }
+
+
+

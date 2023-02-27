@@ -32,6 +32,7 @@ app.Run();
 
 #region helper
 void ConfigureLogs()
+
 {
     // Get the environment in which the application is running on
     var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
