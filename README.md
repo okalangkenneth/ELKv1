@@ -242,7 +242,7 @@ ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string e
  ````
  The code is defining a method called "ConfigureLogs()" which is used to configure Serilog, a logging library, to write log messages to various destinations such as Elasticsearch.
   
- ### Running the web API project in a Docker container and generating logs.
+ ## Running the web API project in a Docker container and generating logs.
  
  ### Step 1: Add logging to the API
  
@@ -253,8 +253,7 @@ ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string e
   ````
   This code logs an informational message when the Get method is called.
  
- ## Running the web API project in a Docker container and generating logs.
- 
+  
  ### Step 2: Test the API and view logs in Kibana
  
  Now, we can test the API and view the logs in Kibana. Open a terminal and navigate to the DotnetELK directory. Then, run the following command to start the API:
