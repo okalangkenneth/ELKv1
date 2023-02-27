@@ -236,7 +236,7 @@ ElasticsearchSinkOptions ConfigureELS(IConfigurationRoot configuration, string e
 }
 #endregion 
  ````
- This code configures Serilog to use the Elasticsearch sink and sends logs to Elasticsearch running on http://localhost:9200.
+ The code is defining a method called "ConfigureLogs()" which is used to configure Serilog, a logging library, to write log messages to various destinations such as Elasticsearch.
  
  ### Step 4: Test the API and view logs in Kibana
 
