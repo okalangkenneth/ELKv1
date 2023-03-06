@@ -1,6 +1,6 @@
 # Logging in an ASP.NET Application using Docker, Elasticsearch, and Kibana.
 
-![image](https://user-images.githubusercontent.com/68539411/223161504-e039a715-d0d9-4b1e-990a-6b9b6f68ce37.png)
+![image](https://user-images.githubusercontent.com/68539411/223164802-472f8d2f-9160-4b34-a4ed-bd96d3528b53.png)
 
 
 ## Introduction:
