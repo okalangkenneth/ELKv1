@@ -311,7 +311,7 @@ docker-compose down
 ````
 
 ### Step 3: Conclusion
-Congratulations! You've successfully set up a logging pipeline using Elasticsearch, Kibana, and Serilog in a .NET 6 web API project. By doing so, you've created a powerful tool for collecting and visualizing logs, which can be very helpful in troubleshooting issues and gaining insights into the behavior of your application.
+We've successfully set up a logging pipeline using Elasticsearch, Kibana, and Serilog in a .NET 6 web API project. By doing so, we've created a powerful tool for collecting and visualizing logs, which can be very helpful in troubleshooting issues and gaining insights into the behavior of your application.
 
 
 
